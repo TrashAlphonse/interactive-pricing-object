@@ -15,46 +15,83 @@
   
   <title>Interactive pricing component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  <input min="0" max="4" type="range" class="form-range" value="2" name=""  id="range">
-  <p id="show">100K</p>
+  <div class="container">
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p class="header-comment"> Sign-up for our 30-day trial. <span>No credit card required.</span></p>
+    </header>
+    <section class="price-card">
+      <div class="price-card-body">
+          <div class="pageviews"><span id="pageviews">100K</span> Pageviews</div>
+          <div class="price"><span id="price">$16.00</span>/ month</div>
+          <div class="range-input">
+            <input min="0" max="4" type="range" class="form-range" value="2" name=""  id="range">
+          </div>
+          <div class="billing-toggle">
+            <span>Monthly Billing</span>
+            <div class="form-check form-switch toggle-form">
+              <input class="form-check-input" id="toggle" type="checkbox">
+            </div>
+            <span>Yearly Billing</span>
+            <span class="discount">-25%</span>
+          </div>
+      </div>
+      <hr>
+      <div class="price-card-footer">
+          <ul class="features">
+            <li><img src="/images/icon-check.svg" alt="check-icon">Unlimited websites</li>
+            <li><img src="/images/icon-check.svg" alt="check-icon">100% data ownership</li>
+            <li><img src="/images/icon-check.svg" alt="check-icon">Email reports</li>
+          </ul>
+          <button class="trial-btn" type="button">Start my trial</button>
+      </div>
+    </section>
+  </div>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Sigma Simple</a>.
   </div>
   
   <script>
 
-      var pageviews = ["10K", "50K", "100K", "500K", "1M"];
-      var prices = [8, 12, 16, 24, 36];
+              var pageviews = ["10K", "50K", "100K", "500K", "1M"];
+              var prices = [8, 12, 16, 24, 36];
+              var pageviewsContainer = document.getElementById("pageviews");
+              var priceContainer = document.getElementById("price");
+              var range = document.getElementById("range");
+              var toggle = document.getElementById("toggle");
+          
 
-      document.getElementById("range").addEventListener("input", function() {
-          var rangeValue = document.getElementById("range").value;
-          document.getElementById("show").innerHTML = pageviews[rangeValue] + " " + "$" + prices[rangeValue];  
-      })
+              toggle.addEventListener("change", function(e) {
+              var rangeValue = range.value;  
+              if (toggle.checked) {
+                    var discountPrice = prices[rangeValue] - (prices[rangeValue] * 0.25);
+                    priceContainer.innerHTML = "$ " + discountPrice + ".00 ";
+              } else {
+                    priceContainer.innerHTML = "$ " + prices[rangeValue] + ".00 ";  
+              }
+          
+
+              })    
+
+
+              range.addEventListener("input", function() {
+              var rangeValue = range.value;     
+              pageviewsContainer.innerHTML = pageviews[rangeValue];
+              if (!toggle.checked) {          
+                  priceContainer.innerHTML = "$ " + prices[rangeValue] + ".00 ";  
+              } else  {
+                    var discountPrice = prices[rangeValue] - (prices[rangeValue] * 0.25);
+                    priceContainer.innerHTML = "$ " + discountPrice + ".00 ";
+              }     
+              })
+
+
+
   </script>
 </body>
 </html>

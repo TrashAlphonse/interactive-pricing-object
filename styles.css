@@ -1,59 +1,279 @@
+body {
+  background-color:	#fafbff;
+  background-image: url('images/bg-pattern.svg');
+  font-family: "Manrope", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 800;
+  color: #293356;
+}
+
+hr {
+  background-color: #858fad;
+}
+
+button:focus {
+  outline: none;
+}
+
+
+/* Header section */
+
+header {
+  padding: 80px 0 50px;
+  text-align: center;
+  background-image: url('/images/pattern-circles.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.header-comment {
+  color: #858fad;
+}
+
+/* Price Card section */
+
+.price-card {
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.price-card-body {
+  padding: 40px 40px 20px;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(40px, max-content);
+}
+
+.pageviews {
+  text-transform: uppercase;
+  color: #858fad;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  padding-top: 25px;
+}
+
+.price {
+  text-align: center;
+  color: #858fad;
+}
+
+.price span {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #293356;
+  vertical-align: sub;
+  position: relative;
+  bottom: -5px;
+}
+
+.range-input {
+  display: block;
+  grid-column: 1 / 3;
+  margin: 20px 0;
+}
+
+/* Bootstrap Range Input Customization */
+
 .form-range:focus::-webkit-slider-thumb {
-    box-shadow: 0 14px 40px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.22);
-  }
-  .form-range:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 14px 40px #a5f3eb, 0 10px 20px #a5f3eb;
+}
+.form-range:focus::-moz-range-thumb {
+  box-shadow: 0 14px 40px #a5f3eb, 0 10px 20px #a5f3eb;
+}
+
+.form-range::-webkit-slider-thumb {
+  width: 2rem;
+  height: 2rem;
+  margin-top: -0.60rem;
+  background-color: #10d5c2;
+  background-image: url("images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 100%;
+}
+
+.form-range::-webkit-slider-thumb:active {
+  background-color: #0ca697;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  background-color: #a5f3eb;
+}
+.form-range::-moz-range-thumb {
+  width: 2rem;
+  height: 2rem;
+  margin-top: -0.60rem;
+  background-color: #10d5c2;
+  background-image: url("images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 100%;
+}
+
+.form-range::-moz-range-thumb:active {
+  background-color: #0ca697;
+}
+.form-range::-moz-range-track {
+  height: 0.5rem;
+  background-color:#a5f3eb;
+}
+
+
+.billing-toggle {
+  grid-column: 1 / 3;
+  justify-content: center;
+  display: flex;
+  font-size: .8rem;
+  color: #858fad;
+  position: relative;
+}
+
+.toggle-form {
+  margin: 0 10px;
+}
+
+/* Bootstrap Switch Input Customization */
+
+
+.form-switch .form-check-input {
+  cursor: pointer;
+  width: 35px;
+  height: 20px;
+  margin-top: 0;
+  background-color: #cdd7ee;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%23fff'/%3e%3c/svg%3e");
+  border: 0;
+}
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%23fff'/%3e%3c/svg%3e");
+  box-shadow: none;
+}
+
+.form-switch .form-check-input:checked {
+  background-color: #10d5c2;
+  background-position: right center;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.discount {
+  position: absolute;
+  right: 17%;
+  bottom: 17px;
+  font-size: 0.7rem;
+  background-color: #feece7;
+  padding: 5px;
+  display: inline-block;
+  color: #ff8c66;
+}
+
+.price-card-footer {
+  padding: 20px 40px 40px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.features li {
+  margin-bottom: 10px;
+  font-size: .8rem;
+  color: #858fad;
+}
+
+.features li img {
+  margin-right: 10px;
+}
+
+.trial-btn {
+  border: 0;
+  display: block;
+  padding: 10px 50px;
+  align-self: center;
+  border-radius: 30px;
+  background-color: 	#293356;
+  color: 	#bdccff;
+}
+
+.trial-btn:hover {
+  color: #fff;
+} 
+
+/* Attribution section */
+
+  .attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin: 40px 0;
   }
 
-  .form-range::-webkit-slider-thumb {
-    width: 2rem;
-    height: 2rem;
-    margin-top: -0.60rem;
-    background-color: hsl(174, 77%, 50%);
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+  }
+
+
+
+
+  @media screen and (max-width: 992px) {
+    .header-comment span {
+      display: block;
+    }
+
+    .price-card {
+      width: 100%;
+    }
+
+   .pageviews {
+     grid-column: 1 / 3;
+     justify-self: center;
+   }  
+
+   .price {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    justify-self: center;
+   }
+
+   .form-range::-webkit-slider-thumb {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -19px;
+    background-color: #10d5c2;
     background-image: url("images/icon-slider.svg");
     background-repeat: no-repeat;
     background-position: center center;
-    border: 0;
-    border-radius: 1rem;
-    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -webkit-appearance: none;
-    appearance: none;
   }
 
-  .form-range::-webkit-slider-thumb:active {
-    background-color: #b6d4fe;
-  }
-  .form-range::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 0.5rem;
-    color: transparent;
-    cursor: pointer;
-    background-color: hsl(174, 77%, 80%);
-    border-color: transparent;
-    border-radius: 1rem;
-  }
-  .form-range::-moz-range-thumb {
-    width: 1rem;
-    height: 1rem;
-    background-color: #0d6efd;
-    border: 0;
-    border-radius: 1rem;
-    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -moz-appearance: none;
-    appearance: none;
+  .billing-toggle {
+    margin-top: 20px;
   }
 
-  .form-range::-moz-range-thumb:active {
-    background-color: #b6d4fe;
+  .discount {
+    bottom: 0;
+    right: 8%;
   }
-  .form-range::-moz-range-track {
-    width: 100%;
-    height: 0.5rem;
-    color: transparent;
-    cursor: pointer;
-    background-color: #dee2e6;
-    border-color: transparent;
-    border-radius: 1rem;
+
+  .price-card-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features {
+    text-align: center;
+  }
+
+  .trial-btn {
+    margin: 20px 0;
+  }
+
   }
