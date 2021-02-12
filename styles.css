@@ -202,7 +202,8 @@ header {
   padding: 10px 50px;
   align-self: center;
   border-radius: 30px;
-  background-color: 	#293356;
+  /* background-color: 	#293356; */
+  background-color: tomato;
   color: 	#bdccff;
 }
 
@@ -257,6 +258,7 @@ header {
 
   .billing-toggle {
     margin-top: 20px;
+    justify-content: flex-start;
   }
 
   .discount {
