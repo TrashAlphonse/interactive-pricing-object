@@ -139,6 +139,7 @@ header {
   grid-column: 1 / 3;
   justify-content: center;
   display: flex;
+  flex-flow: row nowrap;
   font-size: .8rem;
   color: #858fad;
   position: relative;
@@ -259,9 +260,11 @@ header {
 
   .billing-toggle {
     margin-top: 20px;
+    justify-content: space-around;
   }
 
   .billing-toggle span {
+    display: inline-block;
     align-self: center;
   }
 
@@ -272,7 +275,7 @@ header {
 
   .discount {
     position: static;
-    margin-left: 10px;
+    /* margin-left: 10px; */
   }
 
   .price-card-footer {
