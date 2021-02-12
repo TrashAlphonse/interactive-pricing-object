@@ -260,12 +260,13 @@ header {
 
   .billing-toggle {
     margin-top: 20px;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .billing-toggle span {
     display: inline-block;
     align-self: center;
+    white-space: nowrap;
   }
 
   .form-switch .form-check-input {
@@ -275,7 +276,8 @@ header {
 
   .discount {
     position: static;
-    /* margin-left: 10px; */
+    margin-left: 10px;
+    font-size: .5rem;
   }
 
   .price-card-footer {
