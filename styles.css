@@ -103,6 +103,7 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 100%;
+  box-shadow: 0 14px 40px #a5f3eb, 0 10px 20px #a5f3eb;
 }
 
 .form-range::-webkit-slider-thumb:active {
@@ -122,6 +123,7 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 100%;
+  box-shadow: 0 14px 40px #a5f3eb, 0 10px 20px #a5f3eb;
 }
 
 .form-range::-moz-range-thumb:active {
@@ -202,8 +204,7 @@ header {
   padding: 10px 50px;
   align-self: center;
   border-radius: 30px;
-  /* background-color: 	#293356; */
-  background-color: tomato;
+  background-color: 	#293356;
   color: 	#bdccff;
 }
 
@@ -258,12 +259,20 @@ header {
 
   .billing-toggle {
     margin-top: 20px;
-    justify-content: flex-start;
+  }
+
+  .billing-toggle span {
+    align-self: center;
+  }
+
+  .form-switch .form-check-input {
+    width: 45px;
+    height: 25px;
   }
 
   .discount {
-    bottom: 0;
-    right: 0;
+    position: static;
+    margin-left: 10px;
   }
 
   .price-card-footer {
