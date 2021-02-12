@@ -36,7 +36,7 @@
               <input class="form-check-input" id="toggle" type="checkbox">
             </div>
             <span>Yearly Billing</span>
-            <span class="discount">-25%</span>
+            <span class="discount"></span>
           </div>
       </div>
       <hr>
@@ -67,30 +67,27 @@
     var toggle = document.getElementById("toggle");
           
   // Switch Button: Change Price when On
-    toggle.addEventListener("change", function(e) {
-    var rangeValue = range.value;  
-    if (toggle.checked) {
-          var discountPrice = prices[rangeValue] - (prices[rangeValue] * 0.25);
-          priceContainer.innerHTML = "$ " + discountPrice + ".00 ";
-    } else {
-          priceContainer.innerHTML = "$ " + prices[rangeValue] + ".00 ";  
-    }
-          
-
-    })    
+    toggle.addEventListener("change", checkDiscount);
+  
 
   // Range Slider: Change Price + Pageviews
-    range.addEventListener("input", function() {
-    var rangeValue = range.value;     
-    pageviewsContainer.innerHTML = pageviews[rangeValue];
-    if (!toggle.checked) {          
+    range.addEventListener("input", checkDiscount); 
+    
+    
+  // Callback
+    function checkDiscount () {
+      var rangeValue = range.value;
+      if (!toggle.checked) {          
         priceContainer.innerHTML = "$ " + prices[rangeValue] + ".00 ";  
-    } else  {
+      } else  {
           var discountPrice = prices[rangeValue] - (prices[rangeValue] * 0.25);
           priceContainer.innerHTML = "$ " + discountPrice + ".00 ";
-    }     
-    })
+      }     
+    }
 
+  // Change discount text on mobile
+
+ 
               
 
   </script>

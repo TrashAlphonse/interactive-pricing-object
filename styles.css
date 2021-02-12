@@ -2,7 +2,7 @@
 
 body {
   background-color:	#fafbff;
-  background-image: url('images/bg-pattern.svg');
+  background-image: url('/images/bg-pattern.svg');
   font-family: "Manrope", sans-serif;
 }
 
@@ -184,6 +184,10 @@ header {
   color: #ff8c66;
 }
 
+.discount::before {
+  content: "-25% discount";
+}
+
 .price-card-footer {
   padding: 20px 40px 40px 40px;
   display: flex;
@@ -278,6 +282,10 @@ header {
   .discount {
     position: static;
     margin-left: 10px;
+  }
+
+  .discount::before {
+    content: "-25%";
   }
 
   .price-card-footer {
