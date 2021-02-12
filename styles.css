@@ -277,7 +277,6 @@ header {
   .discount {
     position: static;
     margin-left: 10px;
-    font-size: .5rem;
   }
 
   .price-card-footer {
