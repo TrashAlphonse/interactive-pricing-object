@@ -23,7 +23,8 @@
       <h1>Simple, traffic-based pricing</h1>
       <p class="header-comment"> Sign-up for our 30-day trial. <span>No credit card required.</span></p>
     </header>
-    <div class="price-card">
+    <article class="price-card">
+      <h2 class="visually-hidden">Choose your price plan or start free trial.</h2>
       <div class="price-card-body">
           <div class="pageviews"><span id="pageviews">100K</span> Pageviews</div>
           <div class="price"><span id="price">$16.00</span>/ month</div>
@@ -48,7 +49,7 @@
           </ul>
           <button class="trial-btn" type="button">Start my trial</button>
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="attribution">
@@ -59,12 +60,12 @@
   <script>
               
   
-    var pageviews = ["10K", "50K", "100K", "500K", "1M"];
-    var prices = [8, 12, 16, 24, 36];
-    var pageviewsContainer = document.getElementById("pageviews");
-    var priceContainer = document.getElementById("price");
-    var range = document.getElementById("range");
-    var toggle = document.getElementById("toggle");
+    const pageviews = ["10K", "50K", "100K", "500K", "1M"];
+    const prices = [8, 12, 16, 24, 36];
+    const pageviewsContainer = document.getElementById("pageviews");
+    const priceContainer = document.getElementById("price");
+    const range = document.getElementById("range");
+    const toggle = document.getElementById("toggle");
           
   // Switch Button: Change Price when On
     toggle.addEventListener("change", checkDiscount);
@@ -76,19 +77,15 @@
     
   // Callback
     function checkDiscount () {
-      var rangeValue = range.value;
+      let rangeValue = range.value;
       if (!toggle.checked) {          
         priceContainer.innerHTML = "$ " + prices[rangeValue] + ".00 ";  
       } else  {
-          var discountPrice = prices[rangeValue] - (prices[rangeValue] * 0.25);
+          let discountPrice = prices[rangeValue] - (prices[rangeValue] * 0.25);
           priceContainer.innerHTML = "$ " + discountPrice + ".00 ";
       }     
     }
-
-  // Change discount text on mobile
-
- 
-              
+           
 
   </script>
 </body>
